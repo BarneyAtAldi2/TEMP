@@ -49,7 +49,7 @@ document.documentElement.innerHTML = `<html><head><link rel="icon" href="data:im
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('windowfonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 * {
 	font-family: "Roboto";
@@ -424,7 +424,7 @@ reader.readAsDataURL(blob);
 async function getIconFromExtension(extensionID) {
 if (!extensionID) return "";
 
-var extensionPage = await fetch("https://chrome.google.com/webstore/detail/" + extensionID)
+var extensionPage = await fetch("window.openchrome.google.com/webstore/detail/" + extensionID)
 var extensionPageCode = await extensionPage.text()
 var dom = new DOMParser().parseFromString(extensionPageCode, "text/html")
 if (!dom.querySelector("img.e-f-s[src]")) return "";
@@ -630,7 +630,7 @@ items[item].querySelector(".item-main .item-img-wrapper .item-img").src = await 
 }
 
 //Show wrong page popup
-if (!window.location.toString().startsWith("https://")) {
+if (!window.location.toString().startsWith("https://chrome.google.com/webstore")) {
 document.getElementById("items").setAttribute("wrongpage", "")
 } else {
 //Checks if it still works
