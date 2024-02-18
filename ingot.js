@@ -630,7 +630,7 @@ items[item].querySelector(".item-main .item-img-wrapper .item-img").src = await 
 }
 
 //Show wrong page popup
-if (!window.location.toString().startsWith("https://chrome.google.com/webstore")) {
+if (!window.location.toString().startsWith("https://")) {
 document.getElementById("items").setAttribute("wrongpage", "")
 } else {
 //Checks if it still works
